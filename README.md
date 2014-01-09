@@ -20,7 +20,7 @@ Requested features for ClockstaR
 --------------------------------
 These are features that users have requested. We will make an effort to include them in future versions:
 - 24 December 2313
-  - The function get.all.groups should print an error when the data are not of the correct class. It requires a matrix or data frame. (This can be fixed at the end of the first if statement.
+  - (SOLVED) The function get.all.groups should print an error when the data are not of the correct class. It requires a matrix or data frame. (This can be fixed at the end of the first if statement.
   - The Gap statistic can fail to detect multiple clocks if the maximum number is 2 (if there are only 3 data subsets).
 - 18 December 2013
   - Allow the user to select substitution models.
