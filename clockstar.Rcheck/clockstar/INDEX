@@ -1,0 +1,31 @@
+clockstar-package       ClockstaR: Selecting partitioning strategies
+                        for relaxed phylogenetic analysis
+convert.to.fasta        This function is used to convert nexus files to
+                        fasta format for clockstar execution
+cut.trees.beta          cut.trees.beta calculated the diameter of a
+                        dendrogram. If the diameter of the dendrogram
+                        is higher than that specified by the user, the
+                        dendrogram is cut at its longest edge.
+diagnostics.clockstar   diagnostics.clockstar
+get.all.groups          This function finds the best number of
+                        partitions (k) for a data set, and the data
+                        subsets in each partitions, as described in
+                        Duchene et al.
+get.all.groups.k        This function finds the best partitioning
+                        strategy for a fixed number of partitions, as
+                        described in Duchene et al.
+min.dist.topo           This function estimates the sBSDmin value
+                        described in Duchene et al.
+min.dist.topo.mat       Estimate the pairwise BSDmin for a list of
+                        trees
+min.dist.topo.mat.para
+                        Estimate the pairwise BSDmin for a list of
+                        trees
+optim.edge.lengths      This function estimates the branch lengths of a
+                        fixed tree topology for multiple alignment data
+                        sets stored in a folder.
+run.clockstar           This function is wrapper for the individual
+                        ClockstaR functions. It uses a folder that
+                        contains the individual gene alignments and the
+                        phylogenetic tree to calculate the BSDmin
+                        distance.
