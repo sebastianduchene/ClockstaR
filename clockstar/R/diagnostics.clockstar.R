@@ -1,4 +1,5 @@
-diagnostics.clockstar <- function(groups.obj, save.plots = FALSE, plots.file = "clockstar.diagnostics.pdf", interactive = TRUE){
+diagnostics.clockstar <-
+function(groups.obj, save.plots = FALSE, plots.file = "clockstar.diagnostics.pdf", interactive = TRUE){
     if(length(groups.obj) == 3){
         stop("The object specified is not the correct format. Please provide an the output of function get.all.groups. Please use pam.restuls = T")
     }

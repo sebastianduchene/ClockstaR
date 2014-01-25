@@ -20,7 +20,7 @@ Requested features for ClockstaR
 --------------------------------
 These are features that users have requested. We will make an effort to include them in future versions:
 - 25 January 2014
-  - (SOLVED in src_testing/src)The Gap statistic can fail to detect multiple clocks if the maximum number is 2 (if there are only 3 data subsets).
+  - (SOLVED in src_testing/src)The Gap statistic can fail to detect multiple clocks if the maximum number is 2 (if there are only 3 data subsets). The functions min.dist.topo.mat and min.dist.topo.mat.para now print an error when the number of gene trees is <= 3.
 - 24 December 2013
   - (SOLVED in src_testing/src) The function get.all.groups should print an error when the data are not of the correct class. It requires a matrix or data frame. (This can be fixed at the end of the first if statement.
 - 18 December 2013

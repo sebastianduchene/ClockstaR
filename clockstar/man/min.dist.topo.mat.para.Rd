@@ -67,6 +67,9 @@ hist(bsd.matrix.list[[2]], main = "Scaling factors in simulated branch lengths",
 ## The function is currently defined as
 function (tree.list, para = F, ncore = 1) 
 {
+    if (length(tree.list) <= 3) {
+        stop("The number of gene trees is <= 3. ClockstaR requires at least gene 4 trees")
+    }
     min.dist.topo <- function(tree1, tree2) {
         list.tr <- list()
         list.tr[[1]] <- tree1
@@ -107,7 +110,7 @@ function (tree.list, para = F, ncore = 1)
     }
     compute.tree.dists <- function(tree.sub.list, fix.tree) {
         res <- sapply(tree.sub.list, function(a) {
-            return(min.dist.topo(a, fix.tree))
+            return(min.dist.topo(fix.tree, a))
         })
         return(res)
     }
@@ -116,13 +119,13 @@ function (tree.list, para = F, ncore = 1)
         registerDoParallel(cl)
         print(paste("Clusters registered as follows: ", cl))
         res.par <- foreach(s.trees = sub.trees, j = 1:length(tree.list), 
-            .packages = c("ape", "phangorn")) \%dopar\% compute.tree.dists(s.trees, 
-            tree.list[[j]])
+            .packages = c("ape", "phangorn")) \%dopar\% compute.tree.dists(tree.sub.list = s.trees, 
+            fix.tree = tree.list[[j]])
         stopCluster(cl)
     }
     else if (para == F) {
         res.par <- foreach(s.trees = sub.trees, j = 1:length(tree.list), 
-            .packages = c("ape", "phangorn")) \%do\% compute.tree.dists(s.trees, 
+            .packages = c("ape", "phangorn")) \%do\% compute.tree.dists(tree.sub.list = s.trees, 
             tree.list[[j]])
     }
     res.list <- list()

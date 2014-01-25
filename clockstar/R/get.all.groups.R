@@ -97,5 +97,7 @@ function(data.obj, n.b = 500, pam.results = F, save.partitions = F, file.name = 
     		}
 
     	return(min.list)
-	}
+	}else{
+            stop("Please supply the distance between trees. This should be an object of classs Matrix of data.frame. For objects of class dist, use as.matrix(data) to change the class of the object")
+        }
 }
