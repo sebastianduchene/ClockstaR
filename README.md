@@ -1,6 +1,8 @@
 ClockstaR
 =========
-Last update: 18 December 2013
+Last update: 25 January 2014
+Version 0.1
+(For the latest version, please download and install clockstar_0.1.tar.gz)
 
 What is ClockstaR?
 -----------------
