@@ -1,6 +1,9 @@
 min.dist.topo.mat.para <-
 function(tree.list, para = F, ncore = 1){
 
+    if(length(tree.list) <= 3){
+        stop("The number of gene trees is < 3. ClockstaR requires at least gene 4 trees")
+    }
 ######################
 ######################
 ######################
@@ -53,16 +56,16 @@ min.dist.topo <- function(tree1 , tree2){
 ###################
 ###################
 
-	
-	
-	
+
+
+
 	sub.trees <- list()
 	for(k in 2:length(tree.list)){
 		sub.trees[[k]] <- tree.list[1:k-1]
 	}
-	
+
 #	sub.trees <- sub.trees[-1]
-	
+
 #	for(i in 2:length(tree.list)){
 #		print(paste("step", i-1))
 
@@ -77,21 +80,21 @@ min.dist.topo <- function(tree1 , tree2){
 		cl <- makeCluster(ncore)
 		registerDoParallel(cl)
 		print(paste("Clusters registered as follows: ", cl))
-		res.par <- foreach(s.trees = sub.trees, j = 1:length(tree.list), .packages = c("ape", "phangorn")) %dopar% compute.tree.dists(tree.sub.list = s.trees, fix.tree = tree.list[[j]])	
+		res.par <- foreach(s.trees = sub.trees, j = 1:length(tree.list), .packages = c("ape", "phangorn")) %dopar% compute.tree.dists(tree.sub.list = s.trees, fix.tree = tree.list[[j]])
 		stopCluster(cl)
 		}else if(para == F){
-			res.par <- foreach(s.trees = sub.trees, j = 1:length(tree.list), .packages = c("ape", "phangorn")) %do% compute.tree.dists(tree.sub.list = s.trees, tree.list[[j]])	
+			res.par <- foreach(s.trees = sub.trees, j = 1:length(tree.list), .packages = c("ape", "phangorn")) %do% compute.tree.dists(tree.sub.list = s.trees, tree.list[[j]])
 		}
-#res.par <- foreach(s.trees = sub.trees, .packages = c("ape", "phangorn")) %:% foreach(f.tree = tree.list[[i]]) %do% 
+#res.par <- foreach(s.trees = sub.trees, .packages = c("ape", "phangorn")) %:% foreach(f.tree = tree.list[[i]]) %do%
 
 #res.par <- foreach(s.trees = sub.trees, l = 1:length(sub.trees), .packages = c("ape", "phangorn")) %:% foreach(f.tree = tree.list, lt = length(tree.list), .packages = c("ape", "phangorn")) %dopar% compute.tree.dists(tree.sub.list = s.trees, fix.tree = f.tree)
 
 #res.par <- foreach(tree.list[[1:length(tree.list)]], s.trees = sub.trees[1:length(sub.trees)], .packages = c("ape", "phangorn")) %do% compute.tree.dists(tree.sub.list = s.trees, fix.tree = f.tree)
-	
+
 #res.par <- foreach(s.trees = sub.trees, l = 1:length(sub.trees), .packages = c("ape", "phangorn")) %:% foreach(f.tree = tree.list, lt = 1:length(tree.list), .packages = c("ape", "phangorn")) %do% compute.tree.dists(tree.sub.list = s.trees, fix.tree = f.tree)
 
-	
-	
+
+
 #		for(j in 1:i){
 #			if(j == i){
 #				topo.dist[[j]] <- c(0, 0, 0)
@@ -104,9 +107,9 @@ min.dist.topo <- function(tree1 , tree2){
 #		}
 
 #	}
-	
+
 	res.list <- list()
-	
+
 	res.list[[1]] <- matrix(NA, nrow = length(tree.list)  , ncol = length(tree.list) )
 	for(m in 2:nrow(res.list[[1]])){
 		res.list[[1]][m, 1:ncol(res.par[[m]])] <- res.par[[m]][1,]
@@ -114,7 +117,7 @@ min.dist.topo <- function(tree1 , tree2){
 	rownames(res.list[[1]]) <- names(tree.list)
 	colnames(res.list[[1]]) <- names(tree.list)
 	res.list[[1]] <- as.dist(res.list[[1]])
-		
+
 	res.list[[2]] <- matrix(NA, nrow = length(tree.list)  , ncol = length(tree.list) )
 	for(m in 2:nrow(res.list[[2]])){
 		res.list[[2]][m, 1:ncol(res.par[[m]])] <- res.par[[m]][2,]
@@ -123,7 +126,7 @@ min.dist.topo <- function(tree1 , tree2){
 	colnames(res.list[[2]]) <- names(tree.list)
 
 
-	
+
 	return(res.list)
 
 }

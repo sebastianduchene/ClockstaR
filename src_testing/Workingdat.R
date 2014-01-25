@@ -16,6 +16,8 @@ setwd("..")
 
 library(phangorn)
 library(cluster)
+library(geiger)
+
 
 trees.test <- read.tree("testing_trees.trees")
 
@@ -39,9 +41,34 @@ grs.2 <- get.all.groups(as.matrix(di.2[[1]]))
 trees.3 <- trees.test[c(1, 4, 9)]
 di.3 <- min.dist.topo.mat(trees.3)
 grs.3 <- get.all.groups(as.matrix(di.3[[1]]))
-# This does not produce an erro, but it should.
+# This does not produce an error, but it should.
 
 trees.4 <- trees.test[c(1, 4, 9, 8)]
 di.4 <- min.dist.topo.mat(trees.4)
 grs.4 <- get.all.groups(as.matrix(di.4[[1]]))
 # works!!
+
+
+# test whether the modified version of min.dist.topo.mat prints an error for data sets with less than 3 trees
+
+source("src/min.dist.topo.mat.R")
+
+library("foreach")
+library("doParallel")
+
+#This now produces an error. The minimum number of gene trees should be 4
+trees.2 <- trees.test[1:2]
+di.2 <- min.dist.topo.mat(trees.2)
+grs.2 <- get.all.groups(as.matrix(di.2[[1]]))
+
+di.3 <- min.dist.topo.mat(trees.3)
+
+
+##### Testing the parallelised version
+source("src/min.dist.topo.mat.para.R")
+
+#This now produces an error. The minimum number of gene trees should be 4
+di.2.p <- min.dist.topo.mat.para(trees.2, para = T, ncore = 4)
+
+di.3.p <- min.dist.topo.mat.para(trees.3)
+
