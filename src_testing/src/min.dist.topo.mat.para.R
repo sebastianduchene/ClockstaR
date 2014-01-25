@@ -2,7 +2,7 @@ min.dist.topo.mat.para <-
 function(tree.list, para = F, ncore = 1){
 
     if(length(tree.list) <= 3){
-        stop("The number of gene trees is < 3. ClockstaR requires at least gene 4 trees")
+        stop("The number of gene trees is <= 3. ClockstaR requires at least gene 4 trees")
     }
 ######################
 ######################

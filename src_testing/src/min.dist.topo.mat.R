@@ -25,7 +25,7 @@ function(tree.list){
 
 
             }else if(length(tree.list) <= 3){
-                    stop("The number of gene trees is < 3. ClockstaR requires at least gene 4 trees")
+                    stop("The number of gene trees is <= 3. ClockstaR requires at least gene 4 trees")
                 }
         d.mat.lin <- min.dist.topo(tree.list[[1]], tree.list[[2]])
         d.mat[2,1] <- d.mat.lin[1]
