@@ -19,9 +19,10 @@ News and latest versions
 Requested features for ClockstaR
 --------------------------------
 These are features that users have requested. We will make an effort to include them in future versions:
-- 24 December 2313
+- 24 December 2013
   - (SOLVED in src_testing/src) The function get.all.groups should print an error when the data are not of the correct class. It requires a matrix or data frame. (This can be fixed at the end of the first if statement.
-  - The Gap statistic can fail to detect multiple clocks if the maximum number is 2 (if there are only 3 data subsets).
+- 25 January 2014
+  - (SOLVED in src_testing/src)The Gap statistic can fail to detect multiple clocks if the maximum number is 2 (if there are only 3 data subsets).
 - 18 December 2013
   - Allow the user to select substitution models.
   - Include a tutorial so that the user can input a list of tree with branch lengths estimated with an other program, such as [RAxML](http://www.exelixis-lab.org/)
