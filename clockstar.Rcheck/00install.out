@@ -11,3 +11,10 @@ Warning in fun(libname, pkgname) :
 *** installing help indices
 ** building package indices
 ** testing if installed package can be loaded
+Warning in rgl.init(initValue) : RGL: unable to open X11 display
+Warning in fun(libname, pkgname) : error in rgl_init
+Warning: replacing previous import 'as.igraph' when loading 'igraph'
+Warning: replacing previous import 'edges' when loading 'igraph'
+Warning in fun(libname, pkgname) :
+  no display name and no $DISPLAY environment variable
+* DONE (clockstar)
