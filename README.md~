@@ -2,8 +2,6 @@ ClockstaR2
 =========
 This is a re-write version of ClockstaR. This version should only depend on APE and cluster. Optionally, it can use doParallel and foreach
 
-list of functions to replace and brief description
-
 
 
 
