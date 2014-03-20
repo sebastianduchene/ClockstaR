@@ -1,8 +1,12 @@
 ClockstaR2
 =========
-This is a re-write version of ClockstaR. This version should only depend on APE and cluster. Optionally, it can use doParallel and foreach
+This is a re-write version of ClockstaR. This version should only depend on APE and cluster. Optionally, it can use doParallel and foreach. This does not include clockstar for genomic data sets
 
-list of functions to replace and brief description
+list of functions to replace and brief description:
+
+- diagostics.bsd: similar plots to those in the first clockstar version
+
+- Include a tutorial to optimise the trees in R. This can be a standalone script because it depends in phangorn
 
 
 
