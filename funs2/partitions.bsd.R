@@ -1,7 +1,7 @@
 
 
 partitions <- function(bsd.object, ...) UseMethod("partitions")
-
+require(cluster)
 
 
 partitions.bsd <- function(bsd.object, FUN = pam, find.best = T, B = 500, gap.best = "firstSEmax", kmax = "",...){

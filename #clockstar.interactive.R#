@@ -1,0 +1,18 @@
+clockstar.interactive <- function(){
+  print("Welcome to ClockstaR2")
+  trees.file <- readline("please drag or type in the path to your gene trees file:\n")
+  print(paste("reading trees from file: ", trees.file))
+  trees <- read.tree(trees.file)
+  print(paste("I read", length(trees), "from your file"))
+  if(length(names(trees) > 0)){
+    print(paste("The names of your trees are:"))
+    print(names(trees))
+  }else{
+    warning("These trees have no names")
+  }
+
+  para <- readline("Should ClockstaR run in parallel (y/n)")
+  if(para == "y"){
+  	  
+  }
+}
