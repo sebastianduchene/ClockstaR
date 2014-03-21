@@ -22,3 +22,17 @@ for(i in 1:20){
       }
 }
 
+names(trees.list) <- paste0("tree", 1:20)
+class(trees.list) <- "multiPhylo"
+
+source("funs2/bsd.dist.R")
+source("funs2/bsd.matrix.R")
+
+library("doParallel")
+library("foreach")
+library(cluster)
+source("funs2/bsd.matrix.para.R")
+
+trees.bsd <- bsd.matrix(trees.list)
+
+source("funs2/partitions.bsd.R")

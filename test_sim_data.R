@@ -36,3 +36,15 @@ source("funs2/bsd.matrix.para.R")
 trees.bsd <- bsd.matrix(trees.list)
 
 source("funs2/partitions.bsd.R")
+
+
+partitions.object <- partitions(trees.bsd)
+
+source("funs2/plot.partitions.R")
+
+
+# Export trees 
+
+for(m in 1:length(trees.list)){
+      write.tree(trees.list, file = "testing_trees.tree", tree.names = T)
+}

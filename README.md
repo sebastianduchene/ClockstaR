@@ -4,9 +4,11 @@ This is a re-write version of ClockstaR. This version should only depend on APE 
 
 list of functions to replace and brief description:
 
-- diagostics.bsd: similar plots to those in the first clockstar version
+- ~~plot.partitions~~
 
-- Include a tutorial to optimise the trees in R. This can be a standalone script because it depends in phangorn
+- ~~clockstar.interactive. This is a function to run the program interactively. It should only require a file with multiple trees~~
+
+- Include a function to optimise the trees in R. This can be a standalone script because it depends in phangorn
 
 
 

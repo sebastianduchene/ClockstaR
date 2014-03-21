@@ -4,18 +4,18 @@ partitions <- function(bsd.object, ...) UseMethod("partitions")
 
 
 
-partitions.bsd <- function(bsd.object, FUN = pam, find.best = T, B = 500, gap.best = "firstSEmax", ...){
+partitions.bsd <- function(bsd.object, FUN = pam, find.best = T, B = 500, gap.best = "firstSEmax", kmax = "",...){
   dimat <- as.matrix(bsd.object[[1]])
-  if(!exists("K.max")){
-	K.max <- nrow(dimat) - 1
+  if(kmax == ""){
+	kmax <- nrow(dimat) - 1
   }
 
   if(find.best == T){
-    clustdat <- clusGap(dimat, B = B, FUNcluster = FUN, K.max = K.max)
-    npart <- maxSE(f = clustdat$Tab[, 3], SE.f = clustdat$Tab[, 4], method = gap.best)
+    clusdat <- clusGap(dimat, B = B, FUNcluster = FUN, K.max = kmax)
+    npart <- maxSE(f = clusdat$Tab[, 3], SE.f = clusdat$Tab[, 4], method = gap.best)
   }
   parts.list <- list()
-  for(i in 1:(nrow(dimat) - 1)){
+  for(i in 1:kmax){
     clus.temp <- FUN(dimat, k = i, ...)
     parts.list[[i]] <- clus.temp$clustering
   }
