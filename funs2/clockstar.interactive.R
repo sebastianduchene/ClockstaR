@@ -1,8 +1,8 @@
 clockstar.interactive <- function(){  		      
   print("Welcome to ClockstaR2")
-  print("Please drag the working directory with the trees")
-  wd <- file.choose()
-  setwd(wd)
+#  print("Please drag the working directory with the trees")
+#  wd <- file.choose()
+#  setwd(wd)
   trees.file <- readline("please drag or type in the path to your gene trees file in NEWICK format:\n")
   print(paste("reading trees from file: ", trees.file))
   trees <- read.tree(trees.file)
