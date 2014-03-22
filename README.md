@@ -8,7 +8,7 @@ list of functions to replace and brief description:
 
 - ~~clockstar.interactive. This is a function to run the program interactively. It should only require a file with multiple trees~~
 
-- Include a function to optimise the trees in R. This can be a standalone script because it depends in phangorn
+- ~~Include a function to optimise the trees in R. This can be a standalone script because it depends in phangorn~~
 
 
 
