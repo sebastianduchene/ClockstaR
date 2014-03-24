@@ -27,6 +27,7 @@ Duchêne, Sebastián, Martyna Molak, and Simon YW Ho. "ClockstaR: choosing the n
 
 \keyword{ molecular-clock }
 \seealso{
+NONE.
 }
 \examples{
 
