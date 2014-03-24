@@ -16,8 +16,6 @@ Version: \tab 2.0\cr
 Date: \tab 2014-03-21\cr
 License: \tab GNU\cr
 }
-~~ An overview of how to use the package, including the most important ~~
-~~ functions ~~
 }
 \author{
 Sebastian Duchene
@@ -27,11 +25,10 @@ Maintainer: Sebastian Duchene <sebastian.duchene@sydney.edu.au>
 Duchêne, Sebastián, Martyna Molak, and Simon YW Ho. "ClockstaR: choosing the number of relaxed-clock models in molecular phylogenetic analysis." Bioinformatics (2013): btt665.
 }
 
-\keyword{ package }
+\keyword{ molecular-clock }
 \seealso{
-~~ Optional links to other man pages, e.g. ~~
-~~ \code{\link[<pkg>:<pkg>-package]{<pkg>}} ~~
 }
 \examples{
-~~ simple examples of the most important functions ~~
+
+
 }
