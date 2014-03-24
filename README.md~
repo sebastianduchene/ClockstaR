@@ -1,5 +1,7 @@
 ClockstaR2
 =========
+Write the documentation in 
+
 This is a re-write version of ClockstaR. This version should only depend on APE and cluster. Optionally, it can use doParallel and foreach. This does not include clockstar for genomic data sets
 
 list of functions to replace and brief description:
@@ -8,7 +10,7 @@ list of functions to replace and brief description:
 
 - ~~clockstar.interactive. This is a function to run the program interactively. It should only require a file with multiple trees~~
 
-- Include a function to optimise the trees in R. This can be a standalone script because it depends in phangorn
+- ~~Include a function to optimise the trees in R. This can be a standalone script because it depends in phangorn~~
 
 
 

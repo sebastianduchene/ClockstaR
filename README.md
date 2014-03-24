@@ -1,5 +1,7 @@
 ClockstaR2
 =========
+Write the documentation in the ClockstaR2 folder
+
 This is a re-write version of ClockstaR. This version should only depend on APE and cluster. Optionally, it can use doParallel and foreach. This does not include clockstar for genomic data sets
 
 list of functions to replace and brief description:
