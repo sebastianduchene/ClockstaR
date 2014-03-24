@@ -69,6 +69,7 @@ trees.bsd <- bsd.matrix(trees.list)
 # Find the optimal number of partitions:
 partitions.object <- partitions(trees.bsd)
 
+# plot partitions in two graphics devices
 plot(partitions.object)
 
 
