@@ -65,7 +65,7 @@ function ()
         data.files[[i]] <- read.phyDat(files.parts[i], format = "fasta")
     }
     fix.tree <- read.tree(tree.parts[1])
-    out.file.name <- readline("What should be the name of the file to save the optimised trees?\n")
+    out.file.name <- readline("What should be the nane of the file to save the optimised trees?\n")
     print("I have read all the files")
     print("Please select the substitution model for each data subset")
     opt.list <- list()

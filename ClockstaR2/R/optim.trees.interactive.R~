@@ -31,7 +31,7 @@ for(i in 1:length(files.parts)){
 
 fix.tree <- read.tree(tree.parts[1])
 
-out.file.name <- readline("What should be the name of the file to save the optimised trees?\n")
+out.file.name <- readline("What should be the nane of the file to save the optimised trees?\n")
 
 print("I have read all the files")
 
