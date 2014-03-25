@@ -1,0 +1,16 @@
+ClockstaR2-package      ClockstaR: choosing the number of relaxed-clock
+                        models in molecular phylogenetic analysis
+bsd.dist                Estimate sBSDmin distnace between a pair of
+                        trees
+bsd.matrix              Estimate the sBSDmin distance for all pairs of
+                        trees in a list
+bsd.matrix.para         Estimate the sBSDmin distance for all pairs of
+                        trees in a list with parallelisation.
+clockstar.interactive   Run clockstar interactively
+optim.trees.interactive
+                        Optimise the branch lengths of gene trees
+                        interactively
+partitions              function partitions applied to objects of class
+                        bsd
+partitions.bsd          Obtain optimal partitioning scheme
+plot.partitions         plot objects of class partitions

@@ -1,45 +1,29 @@
 \name{clockstar.interactive}
 \alias{clockstar.interactive}
-%- Also NEED an '\alias' for EACH other topic documented here.
 \title{
-%%  ~~function to do ... ~~
+Run clockstar interactively
 }
 \description{
-%%  ~~ A concise (1-5 lines) description of what the function does. ~~
+This function can be used to run ClockstaR interactively. It prompts the use for a file with the gene trees in NEWICK format and some options for the clustering methods.
 }
 \usage{
 clockstar.interactive()
 }
-%- maybe also 'usage' for other objects documented here.
-\details{
-%%  ~~ If necessary, more details than the description above ~~
-}
-\value{
-%%  ~Describe the value returned
-%%  If it is a LIST, use
-%%  \item{comp1 }{Description of 'comp1'}
-%%  \item{comp2 }{Description of 'comp2'}
-%% ...
-}
-\references{
-%% ~put references to the literature/web site here ~
-}
 \author{
-%%  ~~who you are~~
-}
-\note{
-%%  ~~further notes~~
+Sebastian Duchene
 }
 
-%% ~Make other sections like Warning with \section{Warning }{....} ~
+\references{
+Duchêne, Sebastián, Martyna Molak, and Simon YW Ho. "ClockstaR: choosing the number of relaxed-clock models in molecular phylogenetic analysis." Bioinformatics (2013): btt665.
+}
 
 \seealso{
-%% ~~objects to See Also as \code{\link{help}}, ~~~
+optim.trees.interactive() to obtain the gene trees.
 }
 \examples{
-##---- Should be DIRECTLY executable !! ----
-##-- ==>  Define data, use random,
-##--	or do  help(data=index)  for the standard data sets.
+\dontrun{
+clockstar.interactive()
+}
 
 ## The function is currently defined as
 function () 
@@ -128,7 +112,6 @@ function ()
     return(part.data)
   }
 }
-% Add one or more standard keywords, see file 'KEYWORDS' in the
-% R documentation directory.
-\keyword{ ~kwd1 }
-\keyword{ ~kwd2 }% __ONLY ONE__ keyword per line
+\keyword{ gene-tree }
+\keyword{ molecular-clock }
+\keyword{ sBSDmin }
