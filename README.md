@@ -15,11 +15,10 @@ This repository contains the program as an R package. It includes tutorials and 
 Please send any requests or questions to Sebastian Duchene (sebastian.duchene[at]sydney.edu.au). Some other software and resources can be found at the [Molecular Ecology, Evolution, and Phylogenetics Laboratory](http://sydney.edu.au/science/biology/meep/) at the University of Sydney.
 
 
-Pending:
---------
+Getting started:
+----------------
 
-- Update tutorial 
-
+Download a this repository as a zip file and unzip. The following instructions use the example_clockstar_data folder, which contains some fasta files and a tree. These are simulated data under four pattenrns of evolutionary rate variation.
 
 To install directly from github open R and type:
 
@@ -42,10 +41,13 @@ optim.trees.interactive()
 
 To run clockstar interactively (drag the tree file produced with optim.trees.interactive() ):
 
-```
+```{r}
 clockstar.interactive()
 ```
 
 
 
+Pending:
+--------
 
+- Update tutorial 
