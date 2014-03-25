@@ -1135,7 +1135,7 @@ function (partitions.object, save.plot = F, file.name = "results_clockstar")
 > ###
 > options(digits = 7L)
 > base::cat("Time elapsed: ", proc.time() - base::get("ptime", pos = 'CheckExEnv'),"\n")
-Time elapsed:  50.102 0.086 50.19 0 0 
+Time elapsed:  49.66 0.074 49.737 0 0 
 > grDevices::dev.off()
 pdf 
   2 

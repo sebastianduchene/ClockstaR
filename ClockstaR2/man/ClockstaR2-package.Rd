@@ -22,7 +22,7 @@ Sebastian Duchene
 Maintainer: Sebastian Duchene <sebastian.duchene@sydney.edu.au>
 }
 \references{
-Duchêne, Sebastián, Martyna Molak, and Simon YW Ho. "ClockstaR: choosing the number of relaxed-clock models in molecular phylogenetic analysis." Bioinformatics (2013): btt665.
+Duchêne, S, Molak, M., and Ho, SYW. "ClockstaR: choosing the number of relaxed-clock models in molecular phylogenetic analysis." Bioinformatics (2013): btt665.
 }
 
 \keyword{ molecular-clock }
