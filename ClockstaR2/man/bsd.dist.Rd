@@ -25,7 +25,7 @@ See reference
 A numeric vector with the sBSDmin (min.bdi.scaled), the scaling factor (scaling.factor), and the unscaled BSD (min.bdi).
 }
 \references{
-Duchêne, Sebastián, Martyna Molak, and Simon YW Ho. "ClockstaR: choosing the number of relaxed-clock models in molecular phylogenetic analysis." Bioinformatics (2013): btt665.
+Duchêne, S., Molak, M., and Ho, SYW. "ClockstaR: choosing the number of relaxed-clock models in molecular phylogenetic analysis." Bioinformatics (2013): btt665.
 }
 \author{
 Sebastian Duchene
