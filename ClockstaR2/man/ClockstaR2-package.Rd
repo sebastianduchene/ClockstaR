@@ -31,7 +31,6 @@ NONE.
 }
 \examples{
 
-library(ape)
 
 # Create a list of trees of class multiPhylo with four patterns of among-lineage rate variation 
 tr.fix <- rtree(10)

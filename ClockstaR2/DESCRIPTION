@@ -6,6 +6,6 @@ Date: 2014-03-21
 Author: Sebastian Duchene
 Maintainer: Sebastian Duchene <sebastian.duchene@sydney.edu.au>
 Description: Relaxed molecular clocks allow the phylogenetic estimation of evolutionary timescales even when substitution rates vary among branches. In analyses of large multigene datasets, it is often appropriate to use multiple relaxed-clock models to accommodate differing patterns of rate variation among genes. We present ClockstaR, a method for selecting the number of relaxed clocks for multigene datasets.
-Depends: R (>= 2.15.0), ape (>= 3.0-11)
-Suggests: phangorn (>= 1.99-7)
+Depends: R (>= 2.15.0), ape (>= 3.0-8), cluster (>= 1.14.4)
+Suggests: phangorn (>= 1.7-4), doParallel (>= 1.0.3), foreach(>= 1.4.1)
 License: GNU
