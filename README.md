@@ -10,7 +10,7 @@ ClockstaR is an R package for phylogenetic molecular clock analyses of multi-gen
 
 Please follow [this link](http://bioinformatics.oxfordjournals.org/content/early/2013/12/02/bioinformatics.btt665.full) for the original publication.
 
-This repository contains the program as an R package. It includes tutorials and example data sets. To download follow this [link](https://github.com/sebastianduchene/clockstar) and click on "Download zip" at the bottom right of the page. To install the program follow the steps in Tutorial 1 in the "tutorials" folder. ClockstaR requires an [R](http://www.r-project.org/) installation. It also requires some R dependencies, which can be obtained through R, as explained in Tutorial 1.
+ClockstaR requires an [R](http://www.r-project.org/) installation. It also requires some R dependencies, which can be obtained through R, as explained in bellow.
 
 Please send any requests or questions to Sebastian Duchene (sebastian.duchene[at]sydney.edu.au). Some other software and resources can be found at the [Molecular Ecology, Evolution, and Phylogenetics Laboratory](http://sydney.edu.au/science/biology/meep/) at the University of Sydney.
 
