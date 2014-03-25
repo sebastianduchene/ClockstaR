@@ -1,6 +1,8 @@
 bsd.matrix.para <-
 function(tree.list, para = F, ncore = 1){
-
+  require(foreach)
+  require(doParallel)
+  
     if(length(tree.list) <= 3){
         stop("The number of gene trees is <= 3. ClockstaR requires at least gene 4 trees")
     }

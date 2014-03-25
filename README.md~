@@ -1,5 +1,7 @@
+<<<<<<< HEAD
 ClockstaR2
 =========
+Update tutorial and complete documentation in this branch or in src_test
 Write the documentation in the ClockstaR2 folder
 
 This is a re-write version of ClockstaR. This version should only depend on APE and cluster. Optionally, it can use doParallel and foreach. This does not include clockstar for genomic data sets
@@ -59,3 +61,7 @@ Requested features not yet implemented
   - Allow the user to select substitution models.
   - Include a tutorial so that the user can input a list of tree with branch lengths estimated with an other program, such as [RAxML](http://www.exelixis-lab.org/)
   - The program should print an error when there are only two data subsets in the analysis. Instead, the current version always returns that the data should be analysed under a single clock-partition. This due to the implementation of the Gap statistic and PAM algorithm used to find the partitoins.
+=======
+This is the home of ClockstaR2
+=============================
+>>>>>>> src_test

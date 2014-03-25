@@ -1,59 +1,66 @@
 \name{partitions}
 \alias{partitions}
-%- Also NEED an '\alias' for EACH other topic documented here.
 \title{
-%%  ~~function to do ... ~~
+function partitions applied to objects of class bsd
 }
 \description{
-%%  ~~ A concise (1-5 lines) description of what the function does. ~~
+This is the definition of method partitions for bsd objects. See partitions.bsd for more details.
 }
 \usage{
 partitions(bsd.object, ...)
 }
-%- maybe also 'usage' for other objects documented here.
 \arguments{
-  \item{bsd.object}{
-%%     ~~Describe \code{bsd.object} here~~
-}
-  \item{\dots}{
-%%     ~~Describe \code{\dots} here~~
-}
-}
-\details{
-%%  ~~ If necessary, more details than the description above ~~
-}
-\value{
-%%  ~Describe the value returned
-%%  If it is a LIST, use
-%%  \item{comp1 }{Description of 'comp1'}
-%%  \item{comp2 }{Description of 'comp2'}
-%% ...
-}
-\references{
-%% ~put references to the literature/web site here ~
+\item{bsd.object}{An object of class bsd, obtained with bsd.matrix or bsd.matrix.para}
 }
 \author{
-%%  ~~who you are~~
+Sebastian Duchene
 }
-\note{
-%%  ~~further notes~~
-}
-
-%% ~Make other sections like Warning with \section{Warning }{....} ~
 
 \seealso{
-%% ~~objects to See Also as \code{\link{help}}, ~~~
+partitions.bsd
 }
 \examples{
-##---- Should be DIRECTLY executable !! ----
-##-- ==>  Define data, use random,
-##--	or do  help(data=index)  for the standard data sets.
+
+\dontrun{
+
+tr.fix <- rtree(10)
+
+set.seed(12345)
+rates1 <- abs(rnorm(18, sd = 0.1))
+set.seed(123456)
+rates2 <- abs(rnorm(18, sd = 0.1))
+set.seed(1234567)
+rates3 <- abs(rnorm(18, sd = 0.1))
+set.seed(12345678)
+rates4 <- abs(rnorm(18, sd = 0.1))
+
+trees.list <- list()
+
+for(i in 1:20){
+      trees.list[[i]] <- tr.fix
+      if(i <= 5){
+      	   trees.list[[i]]$edge.length <- abs(rates1 + rnorm(18, 0, 0.01)) 
+      }else if(i > 5 && i <= 10){
+      	    trees.list[[i]]$edge.length <- abs(rates2 + rnorm(18, 0, 0.01)) 
+      }else if(i >= 10 && i < 15){
+      	    trees.list[[i]]$edge.length <- abs(rates3 + rnorm(18, 0, 0.01))  
+      }else{
+	    trees.list[[i]]$edge.length <- abs(rates4 + rnorm(18, 0, 0.01)) 
+      }
+}
+
+names(trees.list) <- paste0("tree", 1:20)
+class(trees.list) <- "multiPhylo"
+
+# Estimate sBSDmin distance for all pairs of trees:
+trees.bsd <- bsd.matrix(trees.list)
+
+partitions(trees.bsd)
+
+
+}
 
 ## The function is currently defined as
 function (bsd.object, ...) 
 UseMethod("partitions")
 }
-% Add one or more standard keywords, see file 'KEYWORDS' in the
-% R documentation directory.
-\keyword{ ~kwd1 }
-\keyword{ ~kwd2 }% __ONLY ONE__ keyword per line

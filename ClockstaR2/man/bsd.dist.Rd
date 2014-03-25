@@ -1,53 +1,54 @@
 \name{bsd.dist}
 \alias{bsd.dist}
-%- Also NEED an '\alias' for EACH other topic documented here.
 \title{
-%%  ~~function to do ... ~~
+Estimate sBSDmin distnace between a pair of trees
 }
 \description{
-%%  ~~ A concise (1-5 lines) description of what the function does. ~~
+This function estimates the sBSDmin distance between a pair of trees. This distance metric is described in the original publication. See reference bellow.
 }
 \usage{
 bsd.dist(tree1, tree2)
 }
-%- maybe also 'usage' for other objects documented here.
 \arguments{
   \item{tree1}{
-%%     ~~Describe \code{tree1} here~~
+A phylogenetic tree of class 'phylo'. It should have branch lengths.
 }
   \item{tree2}{
-%%     ~~Describe \code{tree2} here~~
+A phylogenetic tree of class 'phylo'. It should have branch lengths.
+
 }
 }
 \details{
-%%  ~~ If necessary, more details than the description above ~~
+See reference
 }
 \value{
-%%  ~Describe the value returned
-%%  If it is a LIST, use
-%%  \item{comp1 }{Description of 'comp1'}
-%%  \item{comp2 }{Description of 'comp2'}
-%% ...
+A numeric vector with the sBSDmin (min.bdi.scaled), the scaling factor (scaling.factor), and the unscaled BSD (min.bdi).
 }
 \references{
-%% ~put references to the literature/web site here ~
+Duchêne, Sebastián, Martyna Molak, and Simon YW Ho. "ClockstaR: choosing the number of relaxed-clock models in molecular phylogenetic analysis." Bioinformatics (2013): btt665.
 }
 \author{
-%%  ~~who you are~~
-}
-\note{
-%%  ~~further notes~~
+Sebastian Duchene
 }
 
-%% ~Make other sections like Warning with \section{Warning }{....} ~
-
-\seealso{
-%% ~~objects to See Also as \code{\link{help}}, ~~~
-}
 \examples{
 ##---- Should be DIRECTLY executable !! ----
 ##-- ==>  Define data, use random,
 ##--	or do  help(data=index)  for the standard data sets.
+
+# Simulate two trees with identical topologies, but different patterns of among lineage rate variation
+
+tr1 <- rtree(10)
+
+tr2 <- tr1
+tr2$edge.length <- sample(tr1$edge.length)
+
+par(mfrow = c(1, 2))
+plot(tr1)
+plot(tr2)
+
+bsd.dist(tr1, tr2)
+
 
 ## The function is currently defined as
 function (tree1, tree2) 
@@ -85,7 +86,4 @@ function (tree1, tree2)
     return(res.vect)
   }
 }
-% Add one or more standard keywords, see file 'KEYWORDS' in the
-% R documentation directory.
-\keyword{ ~kwd1 }
-\keyword{ ~kwd2 }% __ONLY ONE__ keyword per line
+\keyword{ relaxed-clock }
