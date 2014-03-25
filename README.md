@@ -41,7 +41,7 @@ optim.trees.interactive()
 
 To run clockstar interactively (drag the tree file produced with optim.trees.interactive() ):
 
-```{r}
+```
 clockstar.interactive()
 ```
 
