@@ -1,33 +1,8 @@
 ClockstaR2
 =========
-Update tutorial 
 
 This is a re-write version of ClockstaR. This version should only depend on APE and cluster. Optionally, it can use doParallel and foreach. This does not include clockstar for genomic data sets
 
-list of functions to replace and brief description:
-
-- ~~plot.partitions~~
-
-- ~~clockstar.interactive. This is a function to run the program interactively. It should only require a file with multiple trees~~
-
-- ~~Include a function to optimise the trees in R. This can be a standalone script because it depends in phangorn~~
-
-
-
-
-
-
-
-
-
-
-
-
-ClockstaR
-=========
-Last update: 25 January 2014
-Version 0.1
-(For the latest version, please download and install clockstar_0.1.tar.gz)
 
 What is ClockstaR?
 -----------------
@@ -39,23 +14,38 @@ This repository contains the program as an R package. It includes tutorials and 
 
 Please send any requests or questions to Sebastian Duchene (sebastian.duchene[at]sydney.edu.au). Some other software and resources can be found at the [Molecular Ecology, Evolution, and Phylogenetics Laboratory](http://sydney.edu.au/science/biology/meep/) at the University of Sydney.
 
-News and latest versions
-------------------------
+
+Pending:
+--------
+
+- Update tutorial 
 
 
-Requested features for ClockstaR
---------------------------------
-- 25 January 2014
-  - The most recent version has included these updates:
-These are features that users have requested. We will make an effort to include them in future versions:
-- 25 January 2014
-  - (SOLVED in src_testing/src)The Gap statistic can fail to detect multiple clocks if the maximum number is 2 (if there are only 3 data subsets). The functions min.dist.topo.mat and min.dist.topo.mat.para now print an error when the number of gene trees is <= 3.
-- 24 December 2013
-  - (SOLVED in src_testing/src) The function get.all.groups should print an error when the data are not of the correct class. It requires a matrix or data frame. (This can be fixed at the end of the first if statement.
+To install directly from github open R and type:
 
-Requested features not yet implemented
---------------------------------------
-- 18 December 2013
-  - Allow the user to select substitution models.
-  - Include a tutorial so that the user can input a list of tree with branch lengths estimated with an other program, such as [RAxML](http://www.exelixis-lab.org/)
-  - The program should print an error when there are only two data subsets in the analysis. Instead, the current version always returns that the data should be analysed under a single clock-partition. This due to the implementation of the Gap statistic and PAM algorithm used to find the partitoins.
+```
+install.packages("devtools")
+install_github('ClockstaR', 'sebastianduchene')
+```
+
+To see an example type:
+
+```
+example(ClockstaR2)
+```
+
+To optimise trees interactively (drag the clockstar_example_data folder in this repository):
+
+```
+optim.trees.interactive()
+```
+
+To run clockstar interactively (drag the tree file produced with optim.trees.interactive() ):
+
+```
+clockstar.interactive()
+```
+
+
+
+
