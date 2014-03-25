@@ -14,6 +14,7 @@ files.parts <- grep("[.]fas", dir(), value = T)
 
 tree.parts <- grep("[.]tre", dir(), value = T)
 
+
 if(length(files.parts) < 1 || length(tree.parts) < 1){
   stop("There are no fasta or tree files in this folder. Please make sure that they have the extensions .fasta or .tree")
 }
@@ -31,22 +32,45 @@ for(i in 1:length(files.parts)){
 
 fix.tree <- read.tree(tree.parts[1])
 
+if(is.null(fix.tree$edge.length)){
+  tr <- rtree(length(fix.tree$tip.label))
+  fix.tree$edge.length <- tr$edge.length
+}
+
+
+
 out.file.name <- readline("What should be the name of the file to save the optimised trees?\n")
 
 print("I have read all the files")
 
-print("Please select the substitution model for each data subset")
+choose.models <- readline("Would you like to input the substitution models (y / n)? If you select \"n\" I will use the JC\n")
+
+if(choose.models == "y"){
+  print("Please select the substitution model for each data subset")
+}
 
 opt.list <- list()
 
 for(k in 1:length(data.files)){
-      pml.temp <- pml(fix.tree, data.files[[i]])
-      print("The available substitution models are: JC, F81, K80, HKY, TrNe, TrN, TPM1, K81, TPM1u, TPM2, TPM2u, TPM3, TPM3u, TIM1e, TIM1, TIM2e, TIM2, TIM3e, TIM3, TVMe, TVM, SYM and GTR")
-      mod <- readline(paste("Please type in one of the available substitution models", "for data set", files.parts[k], "\n"))
-      o.gam <- as.logical(readline("Do you wish to optimise gamma? (T/F)\n"))
-      o.k <- as.numeric(readline("How many intervals should be used for the gamma distribution (only applicable when gamma is T) (integer)\n")) 
-      o.inv <- as.logical(readline("Do you wish to optimise I (T/F)\n"))
-      if(any(c(mod, o.gam, o.k, o.inv) == "")){
+      pml.temp <- pml(fix.tree, data.files[[k]])
+
+      if(choose.models == "y"){
+        print("The available substitution models are: JC, F81, K80, HKY, TrNe, TrN, TPM1, K81, TPM1u, TPM2, TPM2u, TPM3, TPM3u, TIM1e, TIM1, TIM2e, TIM2, TIM3e, TIM3, TVMe, TVM, SYM and GTR")
+        mod <- readline(paste("Please type in one of the available substitution models", "for data set", files.parts[k], "\n"))
+        o.gam <- as.logical(readline("Do you wish to optimise gamma? (T/F)\n"))
+        o.k <- as.numeric(readline("How many intervals should be used for the gamma distribution (only applicable when gamma is T) (integer)\n")) 
+        o.inv <- as.logical(readline("Do you wish to optimise I (T/F)\n"))
+      }else{
+        print(paste("Analysing data set", files.parts[k])) 
+        mod <- "JC"
+	o.gam <- F
+	o.k <- 1
+	o.inv <- F
+      }
+      if(o.k == ""){
+        o.k = 1
+      }
+      if( "" %in% c(mod, o.gam, o.inv)){
         setwd(dir.init)
         stop("Some of the model parameters are empty. ABORTING")
       }
