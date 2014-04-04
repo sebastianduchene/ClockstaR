@@ -1,6 +1,7 @@
 Package: ClockstaR2
 Type: Package
-Title: ClockstaR: choosing the number of relaxed-clock models in molecular phylogenetic analysis
+Title: ClockstaR: choosing the number of relaxed-clock models in
+        molecular phylogenetic analysis
 Version: 2.0
 Date: 2014-03-21
 Author: Sebastian Duchene
@@ -9,3 +10,4 @@ Description: Relaxed molecular clocks allow the phylogenetic estimation of evolu
 Depends: R (>= 2.15.0), ape (>= 3.0-8), cluster (>= 1.14.4)
 Suggests: phangorn (>= 1.7-4), doParallel (>= 1.0.3), foreach(>= 1.4.1)
 License: GNU
+Built: R 3.0.2; ; 2014-03-25 03:10:41 UTC; unix

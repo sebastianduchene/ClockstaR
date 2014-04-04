@@ -1,50 +1,69 @@
 \name{bsd.matrix}
 \alias{bsd.matrix}
-%- Also NEED an '\alias' for EACH other topic documented here.
 \title{
-%%  ~~function to do ... ~~
+Estimate the sBSDmin distance for all pairs of trees in a list
 }
 \description{
-%%  ~~ A concise (1-5 lines) description of what the function does. ~~
+bsd.matrix estimates the sBSDmin distance for all paris of trees in a list. It returns an object of class bsd with the pairswise distances and the scaling factors. The scaling factors represent the differences in the magnitude of the rates among trees. See the help file for bsd.dist for more details.
 }
 \usage{
 bsd.matrix(tree.list)
 }
-%- maybe also 'usage' for other objects documented here.
 \arguments{
   \item{tree.list}{
-%%     ~~Describe \code{tree.list} here~~
+A list of trees. It can be a list where each item is a tree, or an object of class multiPhylo. The trees can have names. See the example bellow.
 }
-}
-\details{
-%%  ~~ If necessary, more details than the description above ~~
-}
-\value{
-%%  ~Describe the value returned
-%%  If it is a LIST, use
-%%  \item{comp1 }{Description of 'comp1'}
-%%  \item{comp2 }{Description of 'comp2'}
-%% ...
-}
-\references{
-%% ~put references to the literature/web site here ~
-}
-\author{
-%%  ~~who you are~~
-}
-\note{
-%%  ~~further notes~~
 }
 
-%% ~Make other sections like Warning with \section{Warning }{....} ~
+\value{
+An object of class 'bsd', which is a list with 
+\item{comp1 }{An object of class dist with the pairwise distances for trees}
+\item{comp2 }{An object of class matrix with the scaling factors among trees}
+}
+
+\author{
+Sebastian Duchene
+}
 
 \seealso{
-%% ~~objects to See Also as \code{\link{help}}, ~~~
+bsd.dist
 }
 \examples{
-##---- Should be DIRECTLY executable !! ----
-##-- ==>  Define data, use random,
-##--	or do  help(data=index)  for the standard data sets.
+
+
+# Create a list of trees of class multiPhylo with four patterns of among-lineage rate variation 
+tr.fix <- rtree(10)
+
+set.seed(12345)
+rates1 <- abs(rnorm(18, sd = 0.1))
+set.seed(123456)
+rates2 <- abs(rnorm(18, sd = 0.1))
+set.seed(1234567)
+rates3 <- abs(rnorm(18, sd = 0.1))
+set.seed(12345678)
+rates4 <- abs(rnorm(18, sd = 0.1))
+
+trees.list <- list()
+
+for(i in 1:20){
+      trees.list[[i]] <- tr.fix
+      if(i <= 5){
+      	   trees.list[[i]]$edge.length <- abs(rates1 + rnorm(18, 0, 0.01)) 
+      }else if(i > 5 && i <= 10){
+      	    trees.list[[i]]$edge.length <- abs(rates2 + rnorm(18, 0, 0.01)) 
+      }else if(i >= 10 && i < 15){
+      	    trees.list[[i]]$edge.length <- abs(rates3 + rnorm(18, 0, 0.01))  
+      }else{
+	    trees.list[[i]]$edge.length <- abs(rates4 + rnorm(18, 0, 0.01)) 
+      }
+}
+
+names(trees.list) <- paste0("tree", 1:20)
+class(trees.list) <- "multiPhylo"
+
+# Estimate sBSDmin distance for all pairs of trees:
+trees.bsd <- bsd.matrix(trees.list)
+
 
 ## The function is currently defined as
 function (tree.list) 
@@ -87,7 +106,4 @@ function (tree.list)
     return(res.list)
   }
 }
-% Add one or more standard keywords, see file 'KEYWORDS' in the
-% R documentation directory.
-\keyword{ ~kwd1 }
-\keyword{ ~kwd2 }% __ONLY ONE__ keyword per line
+\keyword{ sBSDmin }

@@ -1,56 +1,74 @@
 \name{plot.partitions}
 \alias{plot.partitions}
-%- Also NEED an '\alias' for EACH other topic documented here.
 \title{
-%%  ~~function to do ... ~~
+plot objects of class partitions
 }
 \description{
-%%  ~~ A concise (1-5 lines) description of what the function does. ~~
+This function plots the results from the gap statistic from package cluster, and a matrix with colours for the partition assignments. 
 }
 \usage{
 plot.partitions(partitions.object, save.plot = F, file.name = "results_clockstar")
 }
-%- maybe also 'usage' for other objects documented here.
 \arguments{
   \item{partitions.object}{
-%%     ~~Describe \code{partitions.object} here~~
+An object of class 'partitions', obtained with partitions.bsd
 }
   \item{save.plot}{
-%%     ~~Describe \code{save.plot} here~~
+logical. Select T to save the plots to a pdf file, or F to print in two new graphics devices.
 }
   \item{file.name}{
-%%     ~~Describe \code{file.name} here~~
+A character. If save.plot == T, the name of the file to print the results.
 }
-}
-\details{
-%%  ~~ If necessary, more details than the description above ~~
-}
-\value{
-%%  ~Describe the value returned
-%%  If it is a LIST, use
-%%  \item{comp1 }{Description of 'comp1'}
-%%  \item{comp2 }{Description of 'comp2'}
-%% ...
-}
-\references{
-%% ~put references to the literature/web site here ~
 }
 \author{
-%%  ~~who you are~~
-}
-\note{
-%%  ~~further notes~~
+Sebastian Duchene
 }
 
-%% ~Make other sections like Warning with \section{Warning }{....} ~
-
-\seealso{
-%% ~~objects to See Also as \code{\link{help}}, ~~~
-}
 \examples{
-##---- Should be DIRECTLY executable !! ----
-##-- ==>  Define data, use random,
-##--	or do  help(data=index)  for the standard data sets.
+
+# Create a list of trees of class multiPhylo with four patterns of among-lineage rate variation 
+tr.fix <- rtree(10)
+
+set.seed(12345)
+rates1 <- abs(rnorm(18, sd = 0.1))
+set.seed(123456)
+rates2 <- abs(rnorm(18, sd = 0.1))
+set.seed(1234567)
+rates3 <- abs(rnorm(18, sd = 0.1))
+set.seed(12345678)
+rates4 <- abs(rnorm(18, sd = 0.1))
+
+trees.list <- list()
+
+for(i in 1:20){
+      trees.list[[i]] <- tr.fix
+      if(i <= 5){
+      	   trees.list[[i]]$edge.length <- abs(rates1 + rnorm(18, 0, 0.01)) 
+      }else if(i > 5 && i <= 10){
+      	    trees.list[[i]]$edge.length <- abs(rates2 + rnorm(18, 0, 0.01)) 
+      }else if(i >= 10 && i < 15){
+      	    trees.list[[i]]$edge.length <- abs(rates3 + rnorm(18, 0, 0.01))  
+      }else{
+	    trees.list[[i]]$edge.length <- abs(rates4 + rnorm(18, 0, 0.01)) 
+      }
+}
+
+names(trees.list) <- paste0("tree", 1:20)
+class(trees.list) <- "multiPhylo"
+
+# Estimate sBSDmin distance for all pairs of trees:
+trees.bsd <- bsd.matrix(trees.list)
+
+# Find the optimal number of partitions:
+partitions.object <- partitions(trees.bsd)
+
+# plot partitions in two graphics devices
+plot(partitions.object)
+
+
+
+
+
 
 ## The function is currently defined as
 function (partitions.object, save.plot = F, file.name = "results_clockstar") 
