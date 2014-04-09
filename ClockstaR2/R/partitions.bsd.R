@@ -6,12 +6,12 @@ function(bsd.object, FUN = pam, find.best = T, B = 500, gap.best = "firstSEmax",
   }
 
   if(find.best == T){
-    clusdat <- clusGap(dimat, B = B, FUNcluster = FUN, K.max = kmax)
+    clusdat <- clusGap(dimat, B = B, FUNcluster = FUN, K.max = kmax, diss = T)
     npart <- maxSE(f = clusdat$Tab[, 3], SE.f = clusdat$Tab[, 4], method = gap.best)
   }
   parts.list <- list()
   for(i in 1:kmax){
-    clus.temp <- FUN(dimat, k = i, ...)
+    clus.temp <- FUN(dimat, k = i, diss = T, ...)
     parts.list[[i]] <- clus.temp$clustering
   }
   parts.mat <- do.call("cbind", parts.list)
