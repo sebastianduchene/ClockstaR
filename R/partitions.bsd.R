@@ -4,18 +4,18 @@ function(bsd.object, FUN = pam, find.best = T, B = 500, gap.best = "firstSEmax",
   if(kmax == ""){
 	kmax <- nrow(dimat) - 1
   }
-
+  dimat.mds <-cmdscale(dimat, k = 3) 
   if(find.best == T){
-    clusdat <- clusGap(dimat, B = B, FUNcluster = FUN, K.max = kmax)
+    clusdat <- clusGap(dimat.mds, B = B, FUNcluster = FUN, K.max = kmax)
     npart <- maxSE(f = clusdat$Tab[, 3], SE.f = clusdat$Tab[, 4], method = gap.best)
   }
   parts.list <- list()
   for(i in 1:kmax){
-    clus.temp <- FUN(dimat, k = i, ...)
+    clus.temp <- FUN(dimat.mds, k = i, ...)
     parts.list[[i]] <- clus.temp$clustering
   }
   parts.mat <- do.call("cbind", parts.list)
-  rownames(parts.mat) <- rownames(dimat)
+  rownames(parts.mat) <- rownames(dimat.mds)
   colnames(parts.mat) <- paste0("k=", 1:ncol(parts.mat))
   
   res <- list(parts.mat, range(bsd.object[[1]]))
