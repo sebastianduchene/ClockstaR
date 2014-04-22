@@ -2,7 +2,8 @@ ClockstaR2
 =========
 
 Sebastian Duchene
-sebastian.duchene[at]sydney.edu.au
+
+ - sebastian.duchene[at]sydney.edu.au
 
 Molecular Ecology, Evolution, and Phylogenetics (MEEP) Laboratory
 
@@ -10,7 +11,7 @@ School of Biological Sciences
 
 University of Sydney
 
-18 April, 2014
+22 April, 2014
 
 
 Introduction
@@ -40,7 +41,7 @@ Please send any requests or questions to Sebastian Duchene (sebastian.duchene[at
 Getting started:
 ----------------
 
-Download a this repository as a zip file and unzip it. The following instructions use the clockstar_example_data folder, which contains some fasta files and a phylogenetic tree in newick format. Open any of these files in a text editor, such as [text wrangler](http://www.barebones.com/products/textwrangler/). These data were simulated under four pattenrns of evolutionary rate variation.
+Download a this repository as a zip file and unzip it. The following instructions use the clockstar_example_data folder, which contains some fasta files and a phylogenetic tree in newick format. Open any of these files in a text editor, such as [text wrangler](http://www.barebones.com/products/textwrangler/). These data were simulated under four pattenrns of evolutionary rate variation. Note that the tree is the tree topology for all genes, or data partitions. To run ClockstaR please format your data similar to the example data in clockstar_example_data.
 
 ClockstaR can be installed directly from GitHub. This requires the devtools package. Type the following code at the R prompt to install all the necessary tools (note you will need internet connection to download the packages directly):. 
 
@@ -202,6 +203,8 @@ The second plot is the fit of the clustering algorithms across different numbers
 
 ![Fig2](example_run_gapstats.png)
 
+
+ClockstaR can be run with other custom settings. Please see the documentation for other details or drop me line for any questions at sebastian.duchene[at]sydney.edy.au.
 
 
 References
