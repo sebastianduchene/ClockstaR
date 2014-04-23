@@ -1,7 +1,7 @@
 ClockstaR2
 =========
 
-Sebastian Duchene
+Sebastian Duchene, Martyna Molak, and Simon Y.W. Ho.
 
  - sebastian.duchene[at]sydney.edu.au
 
