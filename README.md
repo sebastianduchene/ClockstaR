@@ -19,11 +19,11 @@ Introduction
 
 Estimating evolutionary timescales with multigene data sets is a common exercise in phylogenetic studies. Multigene data sets can be partitioned by gene, codon position, or both. In this tutorial, we refer to “data subsets” as individual genes or any subunit of the multigene data set. The term “partitions” will refer to a group of data subsets.
 
-Although the data subsets can be concatenated and analysed with a single relaxed-clock model, the patterns of among-lineage rate variation can differ between data subsets even when their tree topologies are identical. For instance, the among-lineage rate variation in mitochondrial genes can differ from that of nuclear genes. Therefore, different relaxed-clock models can be assigned to different data subsets in order to improve estimates of evolutionary timescales.
+Although the data subsets can be concatenated and analysed with a single relaxed-clock model, the patterns of among-lineage rate variation can differ between data subsets even when their tree topologies are identical. For instance, the among-lineage rate variation in mitochondrial genes can differ from that of nuclear genes. Therefore, different relaxed-clock models can be assigned to different data subsets in order to improve estimates of evolutionary timescales and statistical fit (see Duchene and Ho., 2014a)
 
 There are a large number of ways in which multigene data sets can be partitioned. A common approach to compare partitioning schemes is to use Bayes factors or likelihood-based criteria for model fit. In most cases, however, it is infeasable to test all possible partitioning schemes, especially with computationally intensive methods of calculating Bayes factors.
 
-ClockstaR estimates the phylogenetic branch lengths of each data subset. The branch-score distance, known as sBSDmin is calculated for every pair of trees as a measure of the difference in their patterns of among-lineage rate variation. These distances are used to infer the best partitioning strategy using the GAP statistic with the PAM clustering algorithm, as implemented in the package cluster (Maechler et al., 2012) (for details of the sBSDmin metric, see Duchene et al., 2014).
+ClockstaR estimates the phylogenetic branch lengths of each data subset. The branch-score distance, known as sBSDmin is calculated for every pair of trees as a measure of the difference in their patterns of among-lineage rate variation. These distances are used to infer the best partitioning strategy using the GAP statistic with the PAM clustering algorithm, as implemented in the package cluster (Maechler et al., 2012) (for details of the sBSDmin metric, see Duchene et al., 2014b).
 
 
 
@@ -210,6 +210,9 @@ ClockstaR can be run with other custom settings. Please see the documentation fo
 References
 ----------
 
-Duchêne, S., Molak, M., & Ho, S. Y. (2013). ClockstaR: choosing the number of relaxed-clock models in molecular phylogenetic analysis. Bioinformatics, btt665.
+Duchene, S., & Ho, S. Y. (2014a). Using multiple relaxed-clock models to estimate evolutionary timescales from DNA sequence data. Molecular Phylogenetics and Evolution.
+
+Duchene, S., Molak, M., & Ho, S. Y. (2014b). ClockstaR: choosing the number of relaxed-clock models in molecular phylogenetic analysis. Bioinformatics 30 (7): 1017-1019. 
 
 Kaufman, L., & Rousseeuw, P. J. (2009). Finding groups in data: an introduction to cluster analysis (Vol. 344). John Wiley & Sons.
+
