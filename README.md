@@ -45,7 +45,7 @@ Download a this repository as a zip file and unzip it. The following instruction
 
 ClockstaR can be installed directly from GitHub. This requires the devtools package. Type the following code at the R prompt to install all the necessary tools (note you will need internet connection to download the packages directly):. 
 
-```
+```coffee
 install.packages("devtools")
 library(devtools)
 install_github('ClockstaR', 'sebastianduchene')
@@ -53,13 +53,13 @@ install_github('ClockstaR', 'sebastianduchene')
 
 After downloading and installing, load ClockstaR with the function *library*.
 
-```
+```coffee
 library(ClockstaR2)
 ```
 
 To see an example on how the program is run type:
 
-```
+```coffee
 example(ClockstaR2)
 ```
 
@@ -72,31 +72,31 @@ The first step is to obtain the gene trees for each of the alignments. To do thi
 
 Type the following code in the R prompt and hit enter:
 
-```
+```coffee
 optim.trees.interactive()
 ```
 
 If you get an error message about installing package phangorn, please use this code and then repeat optim.trees.interactive()
 
-```
+```coffee
 install.packcages("phangorn")
 ```
 
 ClockstaR will print a the following message:
 
-```
+```coffee
 Please drag a folder with the data subsets and a tree topology. The files should be in FASTA format, and the trees in NEWICK
 ```
 
 Drag the clockstar_example_data folder to the R console and type enter. Note that the folder should only contain the alingments in FASTA format, and the tree topology in NEWICK. You will see the following message:
 
-```
+```coffee
 What should be the name of the file to save the optimised trees?
 ```
 
 Type the name of the file for the optimised trees. In this case we will use "example.trees"
 
-```
+```coffee
 example.trees
 ```
 
@@ -107,7 +107,7 @@ After typing "n" and pressing enter, ClockstaR will start running. It will print
 Open the clockstar_example_data folder. You will find a file with name "example.trees", as specified a few steps above. Open example.trees in a text editor. It contains each gene tree and the tree names, accoding to the names of the gene alignments. It should look something like this:
 
  
-```
+```coffee
 A1.fasta((t1:0.01504695462,(t2:0.00987...
 A2.fasta((t1:0.01520523401,(t2:0.01317...
 A3.fasta((t1:0.01519309467,(t2:0.01092...
@@ -125,13 +125,13 @@ For this step it is necessary to have the gene trees in a file, such as that obt
 
 Open R and load ClockstaR as shown above. Type the following code at the prompt:
 
-```
+```coffee
 clockstar.interactive()
 ```
 
 ClockstaR will print the following message:
 
-```
+```coffee
 please drag or type in the path to your gene trees file in NEWICK format:
 ```
 
@@ -139,14 +139,14 @@ Drag the file with the gene trees to the R console. If you followed the previous
 
 Depending on the packages you have installed, ClockstaR may ask whether it should run in parallel. This is efficient for large data sets. But for the example data it will not make a big difference, so type "n" if you see this message and then type enter:
 
-```
+```coffee
 Packages foreach and doParallel are available for parallel computation
 Should we run ClockstaR in parallel (y / n)? (This is good for large data sets)
 ```
 
 Clockstar will now start running. The output on screen should look something like this:
 
-```
+```coffee
 [1] "Calculating sBSDmin distances between all pairs of trees"
 [1] "Estimating tree distances"
 [1] "estimating distances 1 of 11"
@@ -161,7 +161,7 @@ Clockstar will now start running. The output on screen should look something lik
 
 After estimating the tree distances (described in the original publication), ClockstaR will print the following message:
 
-```
+```coffee
 "I finished calculating the sBSDmin distances between trees"
 The settings for clustering with ClockstaR are:
 PAM clustering algorithm
@@ -176,7 +176,7 @@ These are the settings for the clustering algorithm. They are appropriate for mo
 
 ClockstaR will now run the clustering algorithm. At the end it will print the best number of partitions and ask whether the results should be saved in a pdf file:
 
-```
+```coffee
 [1] "ClockstaR has finished running"
 [1] "The best number of partitions for your data set is: 3"
 Do you wish to save the results in a pdf file?(y/n)
@@ -186,7 +186,7 @@ Type "y" then enter.
 
 ClockstaR will then ask for the name of the output files:
 
-```
+```coffee
 What should be the name and path of the output file?
 ```
 
