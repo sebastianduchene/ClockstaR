@@ -1,19 +1,18 @@
 ClockstaR2
 =========
-Update tutorial and complete documentation in this branch or in src_test
-Write the documentation in the ClockstaR2 folder
 
-This is a re-write version of ClockstaR. This version should only depend on APE and cluster. Optionally, it can use doParallel and foreach. This does not include clockstar for genomic data sets
+This is the dev branch for clocskstar
 
-list of functions to replace and brief description:
+Current working projects
+------------------------
 
-- ~~plot.partitions~~
+- Include topo.matrix
 
-- ~~clockstar.interactive. This is a function to run the program interactively. It should only require a file with multiple trees~~
+- Modify clocsktar.interactive to include tree topology space
 
-- ~~Include a function to optimise the trees in R. This can be a standalone script because it depends in phangorn~~
+- Make model testing function to call model generator
 
-
+- Make tree topology estimation function to call raxml
 
 
 
