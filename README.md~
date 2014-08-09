@@ -1,6 +1,7 @@
 ClockstaR2
 =========
 
+<<<<<<< HEAD
 Sebastian Duchene, Martyna Molak, and Simon Y.W. Ho.
 
  - sebastian.duchene[at]sydney.edu.au
@@ -23,6 +24,7 @@ Current working projects
 - Modify clocsktar.interactive to include tree topology space
 
 - Make model testing function to call model generator
+>>>>>>> c80851190405ea2201d6f607b2dab000524fb1e1
 
 - Make tree topology estimation function to call raxml
 
