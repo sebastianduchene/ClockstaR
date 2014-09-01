@@ -11,7 +11,19 @@ School of Biological Sciences
 
 University of Sydney
 
-22 April, 2014
+1 September, 2014
+
+
+Future implementations and experimental functions
+-------------------------------------------------
+
+- Implement parallel version for topology distance
+
+- Write tutorial for topology distance clustering
+
+- Integrate modelgenerator for model testing
+
+- Integrate RaxML for maximum likelihood optimisation of branch lengths and topologies
 
 
 Introduction
