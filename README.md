@@ -221,7 +221,7 @@ The second plot is the fit of the clustering algorithms across different numbers
 ClockstaR can be run with other custom settings. Please see the documentation for other details or drop me line for any questions at sebastian.duchene[at]sydney.edy.au.
 
 
-Aknowledgements
+Acknowledgements
 --------------
 
 The logo was designed by [Jun Tong](http://sydney.edu.au/science/biology/meep/people/juntong.shtml)
