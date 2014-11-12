@@ -9,7 +9,7 @@ partition_data_partitionfinder <- function(data_file_fasta, partition_finder_fil
   raxml_format_parts <- raxml_format_parts[1:(which(raxml_format_parts == '')[1] - 1)]
 
   partitions_raw <- gsub('^[A-Z]+,', '', raxml_format_parts)
-
+  parts_list  <- list()
   for(i in 1:length(partitions_raw)){
     parts_dat_temp <- gsub(' ', '', strsplit(partitions_raw[i], '=')[[1]])  
     parts_name_temp <- parts_dat_temp[1]
