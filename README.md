@@ -1,3 +1,5 @@
+![logo](clockstar_logo.png)
+
 ClockstaR2
 =========
 
@@ -11,9 +13,36 @@ School of Biological Sciences
 
 University of Sydney
 
+<<<<<<< HEAD
 22 April, 2014
 =======
 This is the dev branch for clocskstar
+=======
+12 November, 2014
+
+
+New features
+------------
+
+- function partition_data_partitionfinder can use the partition finder output file to partition a long concatenated alignment. The output is a set of fasta files that can be used as an input for ClockstaR. For example use:
+
+```
+partition_data_partitionfinder('drag fasta file with concatenated data here', 'drag partition finder output here')
+```
+
+
+
+Future implementations and experimental functions
+-------------------------------------------------
+
+- Implement parallel version for topology distance
+
+- Write tutorial for topology distance clustering
+
+- Integrate modelgenerator for model testing
+
+- Integrate RaxML for maximum likelihood optimisation of branch lengths and topologies
+>>>>>>> d623437c20539cb72cc92abbe5133942a6348f98
 
 Current working projects
 ------------------------
@@ -218,6 +247,11 @@ The second plot is the fit of the clustering algorithms across different numbers
 
 ClockstaR can be run with other custom settings. Please see the documentation for other details or drop me line for any questions at sebastian.duchene[at]sydney.edy.au.
 
+
+Acknowledgements
+--------------
+
+The logo was designed by [Jun Tong](http://sydney.edu.au/science/biology/meep/people/juntong.shtml)
 
 References
 ----------

@@ -1,7 +1,15 @@
+<<<<<<< HEAD
 ClockstaR2
 =========
 
 <<<<<<< HEAD
+=======
+![logo](clockstar_logo.png)
+
+ClockstaR2
+=========
+
+>>>>>>> d623437c20539cb72cc92abbe5133942a6348f98
 Sebastian Duchene, Martyna Molak, and Simon Y.W. Ho.
 
  - sebastian.duchene[at]sydney.edu.au
@@ -12,6 +20,7 @@ School of Biological Sciences
 
 University of Sydney
 
+<<<<<<< HEAD
 22 April, 2014
 =======
 This is the dev branch for clocskstar
@@ -27,6 +36,28 @@ Current working projects
 >>>>>>> c80851190405ea2201d6f607b2dab000524fb1e1
 
 - Make tree topology estimation function to call raxml
+=======
+12 November, 2014
+
+New features
+------------
+
+- function partition_data_partitionfinder can use the partition finder output file to partition a long concatenated alignment. The output is a set of fasta files that can be used as an input for ClockstaR.
+
+
+
+Future implementations and experimental functions
+-------------------------------------------------
+
+- Implement parallel version for topology distance
+
+- Write tutorial for topology distance clustering
+
+- Integrate modelgenerator for model testing
+
+- Integrate RaxML for maximum likelihood optimisation of branch lengths and topologies
+
+>>>>>>> d623437c20539cb72cc92abbe5133942a6348f98
 
 Introduction
 ------------
@@ -221,6 +252,14 @@ The second plot is the fit of the clustering algorithms across different numbers
 ClockstaR can be run with other custom settings. Please see the documentation for other details or drop me line for any questions at sebastian.duchene[at]sydney.edy.au.
 
 
+<<<<<<< HEAD
+=======
+Acknowledgements
+--------------
+
+The logo was designed by [Jun Tong](http://sydney.edu.au/science/biology/meep/people/juntong.shtml)
+
+>>>>>>> d623437c20539cb72cc92abbe5133942a6348f98
 References
 ----------
 
