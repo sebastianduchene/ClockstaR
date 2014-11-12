@@ -13,7 +13,13 @@ School of Biological Sciences
 
 University of Sydney
 
-9 September, 2014
+12 November, 2014
+
+New features
+------------
+
+- function partition_data_partitionfinder can use the partition finder output file to partition a long concatenated alignment. The output is a set of fasta files that can be used as an input for ClockstaR.
+
 
 
 Future implementations and experimental functions
