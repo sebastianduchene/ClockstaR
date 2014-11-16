@@ -12,7 +12,7 @@ Relaxed molecular clocks allow the phylogenetic estimation of evolutionary times
 \tabular{ll}{
 Package: \tab ClockstaR2\cr
 Type: \tab Package\cr
-Version: \tab 2.0\cr
+Version: \tab 2.0.1\cr
 Date: \tab 2014-03-21\cr
 License: \tab GNU\cr
 }
