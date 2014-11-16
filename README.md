@@ -25,6 +25,11 @@ New features
 partition_data_partitionfinder('drag fasta file with concatenated data here', 'drag partition finder output here')
 ```
 
+- Function optim.trees.interactive did not work for some versions of R in windows. If this function produces the error: "can only drag-and-drop .R, .RData and .rda files", the use the following:
+
+```
+optim.trees.interactive(folder.parts = 'path to your folder with fasta files and tree topology here')
+```
 
 
 Future implementations and experimental functions
