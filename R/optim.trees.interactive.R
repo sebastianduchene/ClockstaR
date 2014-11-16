@@ -1,13 +1,15 @@
 optim.trees.interactive <-
-function(){
+function(folder.parts){
 
 if(!("phangorn" %in% installed.packages()[,1])){
   stop("Package phangorn is not installed. Please install it to run this function")
 }
 
 require(phangorn)
+if(missing(folder.parts)){
 folder.parts <- readline("Please drag a folder with the data subsets and a tree topology. The files should be in FASTA format, and the trees in NEWICK\n")
 dir.init <- getwd()
+}
 setwd(folder.parts)
 
 files.parts <- grep("[.]fas", dir(), value = T)
