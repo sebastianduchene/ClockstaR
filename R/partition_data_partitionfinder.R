@@ -37,8 +37,8 @@ partition_data_partitionfinder <- function(data_file_fasta, partition_finder_fil
   }
 
   for(pdat in 1:length(parts_list)){
-    cat('saving partition', names(parts_list)[i], 'to', paste0(names(parts_list)[pdat], '.fasta\n'))
-    write.dna(data_file[, parts_list[[i]]], file = paste0(names(parts_list)[pdat], '.fasta'), format = 'fasta', nbcol = -1, colsep = '')
+    cat('saving partition', names(parts_list)[pdat], 'to', paste0(names(parts_list)[pdat], '.fasta\n'))
+    write.dna(data_file[, parts_list[[pdat]]], file = paste0(names(parts_list)[pdat], '.fasta'), format = 'fasta', nbcol = -1, colsep = '')
   }
 
 }
