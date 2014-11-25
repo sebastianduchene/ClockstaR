@@ -24,12 +24,12 @@ Sebastian Duchene
 }
 
 \seealso{
-Pending.
+#Pending.
 }
 \examples{
 
-
+\dontrun{
 Pending.
-   
+}
 }
 \keyword{ sBSDmin }
