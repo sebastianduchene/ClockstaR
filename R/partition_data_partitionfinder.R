@@ -1,12 +1,12 @@
-
+print('testing')
 partition_data_partitionfinder <- function(data_file_fasta, partition_finder_file){
    partition_finder_file <- readLines(partition_finder_file)
    data_file <- read.dna(data_file_fasta, format = 'fasta')
 
   if(!is.matrix(data_file)) stop('The data have not been read as a matrix. Please check that it is aligned')
 
-  raxml_format_parts <- partition_finder_file[(grep('RaxML[-]style', partition_finder_file) + 1):length(partition_finder_file)]
-  raxml_format_parts <- raxml_format_parts[1:(which(raxml_format_parts == '')[1] - 1)]
+  raxml_format_parts_raw <- partition_finder_file[(grep('RaxML[-]style', partition_finder_file) + 1):length(partition_finder_file)]
+  raxml_format_parts <- tryCatch(raxml_format_parts_raw[1:(which(raxml_format_parts_raw == '')[1] - 1)], error = function(x) return(raxml_format_parts_raw))
 
   partitions_raw <- gsub('^[A-Z]+,', '', raxml_format_parts)
   parts_list  <- list()
