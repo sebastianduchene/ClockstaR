@@ -3,7 +3,7 @@
 ## Sebastian Duchene
 ## Feb 27 2015
 # To run. source this function and type:
-# partition_data_blocks('partition_finder.cfg', 'alignment.phy')
+partition_data_blocks('partition_finder.cfg', 'alignment.phy')
 
 partition_data_blocks <- function(pf_config, phy_alignment){
     require(ape)
@@ -28,8 +28,8 @@ partition_data_blocks <- function(pf_config, phy_alignment){
         return(matrix_output)
     }
 
-    partition_file <- readLines(pf_config)
-    sequences <- read.phylip(phy_alignment)
+    partition_lines <- readLines(pf_config)
+    sequence_matrix<- read.phylip(phy_alignment)
 
     pf_arguments <- partition_lines[grep('=', partition_lines)]
     partitions_args<- pf_arguments[-grep('alignment|models|model_selection|branchlengths|search', pf_arguments)]
@@ -37,7 +37,7 @@ partition_data_blocks <- function(pf_config, phy_alignment){
     parts_output <- list()
     for(i in 1:length(partitions_args)){
         part_split <- strsplit(partitions_args[i], '=')[[1]]
-        part_name <- part_split[1]
+        part_name <- gsub(' ', '', part_split[1])
         part_range <- strsplit(part_split[2], '[-]')[[1]]
         part_start <- as.numeric(part_range[1])
         if(length(grep('.*\\\\.*', part_range[2])) > 0){
@@ -55,6 +55,7 @@ partition_data_blocks <- function(pf_config, phy_alignment){
 
     for(i in 1:length(parts_output)){
         part_temp <- sequence_matrix[, parts_output[[i]]]
+        print(paste(names(parts_output)[i], 'saved in', getwd(), sep = ' '))
         write.dna(part_temp, file = paste0(names(parts_output)[i], '.fasta'), format = 'fasta', colsep = '', nbcol = -1)
     }
 }
