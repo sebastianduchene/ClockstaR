@@ -3,7 +3,7 @@
 ## Sebastian Duchene
 ## Feb 27 2015
 # To run. source this function and type:
-partition_data_blocks('partition_finder.cfg', 'alignment.phy')
+#partition_data_blocks('partition_finder.cfg', 'alignment.phy')
 
 partition_data_blocks <- function(pf_config, phy_alignment){
     require(ape)
