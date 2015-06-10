@@ -13,7 +13,7 @@ School of Biological Sciences
 
 University of Sydney
 
-26 February, 2015
+10 June, 2015
 
 
 New features
@@ -34,6 +34,8 @@ optim.trees.interactive(folder.parts = 'path to your folder with fasta files and
 
 Future implementations and experimental functions
 -------------------------------------------------
+
+- Implement optimisation of tree distances using the derivative of the BSD distance
 
 - Implement parallel version for topology distance
 
