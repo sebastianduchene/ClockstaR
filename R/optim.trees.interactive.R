@@ -55,7 +55,6 @@ if(choose.models == "y"){
 opt.list <- list()
 
 for(k in 1:length(data.files)){
-      pml.temp <- pml(fix.tree, data.files[[k]])
 
       if(choose.models == "y"){
         print("The available substitution models are: JC, F81, K80, HKY, TrNe, TrN, TPM1, K81, TPM1u, TPM2, TPM2u, TPM3, TPM3u, TIM1e, TIM1, TIM2e, TIM2, TIM3e, TIM3, TVMe, TVM, SYM and GTR")
@@ -77,7 +76,12 @@ for(k in 1:length(data.files)){
         setwd(dir.init)
         stop("Some of the model parameters are empty. ABORTING")
       }
-      opt.list[[k]] <- optim.pml(pml.temp, optInv = o.inv, k = o.k, optGamma = o.gam, model = mod)$tree
+      if(!o.gam){
+         pml.temp <- pml(fix.tree, data.files[[k]])
+      }else{
+	pml.temp <- pml(fix.tree, data.files[[k]], k = 4)
+      }
+      opt.list[[k]] <- optim.pml(pml.temp, optInv = o.inv, optGamma = o.gam, model = mod)$tree
       plot(opt.list[[k]])
 }   
 
